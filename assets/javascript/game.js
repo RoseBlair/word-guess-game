@@ -20,8 +20,9 @@ var currentWord = document.getElementById("currentWord");
 // };
 
 var randomBreed = dogBreed[Math.floor(Math.random() * dogBreed.length)];
-var breedLength = randomBreed.length;
-currentWord.textContent = "-".repeat(breedLength)
+var split = randomBreed.split("");
+// var breedLength = randomBreed.length;
+// currentWord.textContent = "-".repeat(breedLength)
 
 document.onkeyup = function(event) {
 
@@ -32,8 +33,25 @@ document.onkeyup = function(event) {
 
     
     var userGuess = event.key;
-    letterArray.push(userGuess);
-    guessedLetters.textContent = letterArray;
+    var userGuessLower = userGuess.toLowerCase();
+    var replaceLetters = [];
+    
+
+    //trying to find the correct character from within a string:
+
+    if (randomBreed.indexOf(userGuessLower) === -1) {
+        letterArray.push(userGuessLower);
+        guessedLetters.textContent = letterArray;
+      }
+      // If it is in the array...
+
+      else {
+        // randomBreed.replace(userGuessLower);
+        for (var i=0; i < randomBreed.length; i++) {
+        console.log(randomBreed.indexOf(userGuessLower)); 
+        };
+        
+      }
 
 };
 

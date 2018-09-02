@@ -49,6 +49,7 @@ document.onkeyup = function(event) {
         // randomBreed.replace(userGuessLower);
         for (var i=0; i < randomBreed.length; i++) {
         console.log(randomBreed.indexOf(userGuessLower)); 
+
         };
         
       }

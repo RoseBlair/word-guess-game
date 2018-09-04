@@ -1,9 +1,10 @@
 
 
-var dogBreed = ["doberman", "blue heeler", "australian shepherd",
-  "dalmation", "weimaraner", "bichon frise", "komondor", "dachshund", "poodle", "great dane",
-  "chihuahua", "golden retreiver", "irish wolfhound", "american pit bull terrier", "rhodesian ridgeback",
-  "labrador retreiver", "border collie", "schnauzer", "corgi", "pug", "shiba inu"];
+var dogBreed = ["doberman", "blueheeler", "australianshepherd",
+  "dalmation", "weimaraner", "bichonfrise", "komondor", "dachshund", "poodle", "greatdane",
+  "chihuahua", "goldenretreiver", "irishwolfhound", "pitbull", "rhodesianridgeback",
+  "labrador", "bordercollie", "schnauzer", "corgi", "pug", "shibainu", "beagle", "bulldog", 
+  "boxer", "rottweiler", "akita", "greyhound", "pikengese"];
 
 var wins = 0;
 var guesses = 10;
@@ -28,7 +29,7 @@ var currentWordArray = [];
 
 
 for (var i=0; i < breedLength; i++) { 
-  currentWordArray[i]="-";
+  currentWordArray[i]="_";
 }
 
 currentWord.textContent = currentWordArray.join(" ");
@@ -51,8 +52,8 @@ document.onkeyup = function (event) {
   //trying to find the correct character from within a string:
 
   if (randomBreed.indexOf(userGuessLower) === -1) {
-    letterArray.push(userGuessLower);
-    guessedLetters.textContent = letterArray;
+    letterArray.push(userGuessLower.toUpperCase());
+    guessedLetters.textContent = letterArray.join(" ");
   }
 
   

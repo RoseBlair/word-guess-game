@@ -4,7 +4,7 @@ var dogBreed = ["doberman", "blueheeler", "australianshepherd",
   "dalmation", "weimaraner", "bichonfrise", "komondor", "dachshund", "poodle", "greatdane",
   "chihuahua", "goldenretreiver", "irishwolfhound", "pitbull", "rhodesianridgeback",
   "labrador", "bordercollie", "schnauzer", "corgi", "pug", "shibainu", "beagle", "bulldog", 
-  "boxer", "rottweiler", "akita", "greyhound", "pikengese"];
+  "boxer", "rottweiler", "akita", "greyhound", "pekingese"];
 
 var wins = 0;
 var guesses = 10;
@@ -12,6 +12,7 @@ var letterArray = [];
 var randomBreedArray = [];
 var updatedGuess = [];
 var correctLetters = [];
+
 
 var winsCount = document.getElementById("winCount");
 var guessedLetters = document.getElementById("guessedLetters");
@@ -39,8 +40,7 @@ currentWord.textContent = currentWordArray.join(" ");
 document.onkeyup = function (event) {
 
 
-
-
+ 
 
 
 
@@ -54,6 +54,8 @@ document.onkeyup = function (event) {
   if (randomBreed.indexOf(userGuessLower) === -1) {
     letterArray.push(userGuessLower.toUpperCase());
     guessedLetters.textContent = letterArray.join(" ");
+    guesses--;
+    remainingGuesses.textContent = guesses;
   }
 
   
@@ -73,5 +75,27 @@ document.onkeyup = function (event) {
     };
 
   };
+
+  //if you win or lose, the game is reset.
+
+  if (currentWordArray.join(" ") === randomBreedArray.join (" ")) {
+    wins++;
+    winCount.textContent = wins;
+    
+
+  }
+
+  if ((guesses===0) || (currentWordArray.join(" ") === randomBreedArray.join (" "))) {
+    randomBreed = dogBreed[Math.floor(Math.random() * dogBreed.length)];
+    randomBreedArray = randomBreed.split("");
+    breedLength = randomBreed.length;
+    currentWordArray = [];
+    for (var i=0; i < breedLength; i++) { 
+      currentWordArray[i]="_";
+    };  
+    guesses = 10;
+    letterArray = [];
+
+  }
 
 };

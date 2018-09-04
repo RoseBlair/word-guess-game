@@ -92,7 +92,7 @@ document.onkeyup = function (event) {
     guesses=10;
     currentWord.textContent = currentWordArray.join(" ");
     remainingGuesses.textContent = guesses;
-    letterArray = [];
+    guessedLetters.textContent = letterArray.join(" ");
   }
 
   if ((guesses===0)) {
@@ -107,7 +107,7 @@ document.onkeyup = function (event) {
     currentWord.textContent = currentWordArray.join(" ");
     remainingGuesses.textContent = guesses;
     letterArray = [];
-
+    guessedLetters.textContent = letterArray.join(" ");
   }
 
 };

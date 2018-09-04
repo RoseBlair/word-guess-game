@@ -81,11 +81,21 @@ document.onkeyup = function (event) {
   if (currentWordArray.join(" ") === randomBreedArray.join (" ")) {
     wins++;
     winCount.textContent = wins;
-    
-
+    randomBreed = dogBreed[Math.floor(Math.random() * dogBreed.length)];
+    randomBreedArray = randomBreed.split("");
+    breedLength = randomBreed.length;
+    currentWordArray = [];
+    for (var i=0; i < breedLength; i++) { 
+      currentWordArray[i]="_";
+    };  
+    letterArray = [];
+    guesses=10;
+    currentWord.textContent = currentWordArray.join(" ");
+    remainingGuesses.textContent = guesses;
+    letterArray = [];
   }
 
-  if ((guesses===0) || (currentWordArray.join(" ") === randomBreedArray.join (" "))) {
+  if ((guesses===0)) {
     randomBreed = dogBreed[Math.floor(Math.random() * dogBreed.length)];
     randomBreedArray = randomBreed.split("");
     breedLength = randomBreed.length;
@@ -94,6 +104,8 @@ document.onkeyup = function (event) {
       currentWordArray[i]="_";
     };  
     guesses = 10;
+    currentWord.textContent = currentWordArray.join(" ");
+    remainingGuesses.textContent = guesses;
     letterArray = [];
 
   }

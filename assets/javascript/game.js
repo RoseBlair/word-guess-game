@@ -110,4 +110,6 @@ document.onkeyup = function (event) {
     guessedLetters.textContent = letterArray.join(" ");
   }
 
+
+
 };

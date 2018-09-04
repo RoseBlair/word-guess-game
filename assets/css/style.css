@@ -1,15 +1,26 @@
 
 
 .wrapper {
-    display: block;
-    margin: 0  auto;
-    width: 40%;
     background-color: white;
     font-size: 20px;
     line-height: 3em;
-    
+    float: left;
+    padding: 10%;
+    margin-left: 30%;
+    margin-top: 20px;
    
 }
+.image-left {
+    width: 50px;
+    float: left;
+    
+}
+
+/* .image-right {
+    width: 50px;
+    float: right;
+    
+} */
 
 img {
     display: block;
@@ -35,5 +46,6 @@ h1,
 
 #bigtitle {
     font-size: 30px;
-    line-height: 4em;
+    line-height: 3em;
 }
+

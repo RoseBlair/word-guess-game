@@ -1,0 +1,39 @@
+
+
+.wrapper {
+    display: block;
+    margin: 0  auto;
+    width: 40%;
+    background-color: white;
+    font-size: 20px;
+    line-height: 3em;
+    
+   
+}
+
+img {
+    display: block;
+
+}
+
+body {
+    background-image: url("../images/fur.jpg");
+}
+
+p,
+h1,
+#currentWord,
+#guessedLetters,
+#remainingGuesses,
+#winCount {
+    text-align: center;
+}
+
+#currentWord{
+    font-size: 30px;
+}
+
+#bigtitle {
+    font-size: 30px;
+    line-height: 4em;
+}
